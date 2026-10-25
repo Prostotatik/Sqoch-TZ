@@ -1,0 +1,171 @@
+/*
+ * Design tokens. Colors/radii/spacing/layout: agents-designer/design-spec.md §1.
+ * Fonts and type scale: agents-anti-AI-slop/guidelines.md §1–2 (orchestrator decision 1).
+ */
+:root {
+  color-scheme: dark;
+
+  /* --- palette (spec §1.1) --- */
+  --bg: #010205;
+  --bg-deep: #000103;
+  --bg-raised: #030611;
+  --surface-glass: #2a2a40;
+  --surface-glass-2: #2a2e3f;
+  --surface-outline: #01020b;
+  --surface-panel: #0a0c15;
+  --stroke: #292a4e;
+  --stroke-soft: #222640;
+  --stroke-hover: #2f3358;
+  --stroke-strong: #383956;
+  --stroke-teal: #528784;
+  --divider: #1d202f;
+
+  --primary-solid: #6156fb;
+  /* SLOP-02: white label, AA on every point of the button (≥ 4.79:1 on #6458ff, its lightest stop) */
+  --on-primary: #ffffff;
+  --accent: #6458ff;
+  --accent-num: #6773f8;
+  --link: #8794e7;
+  --link-hover: #a9b3ff;
+
+  --pill-fill: #0e0d24;
+  --pill-stroke: #9d6ddc;
+  --outline-btn-stroke: #5056cb;
+  --outline-btn-fill: #060b27;
+  --counter-fill: #1e2036;
+  --counter-btn: #101629;
+  --counter-stroke: #30416d;
+
+  --text: #ffffff;
+  --text-2: #e7e9f5;
+  --text-3: #a4aac0;
+  --text-label: #a3a6cb;
+  --text-muted: #9b9ba6;
+  --text-violet: #b6c7f3;
+  --placeholder: #5a5e7a;
+
+  --neon-orange: #f8673b;
+  --neon-coral: #f86a55;
+  --neon-red: #e92e48;
+  --neon-gold: #f19a59;
+  --neon-pink: #e06aca;
+  --neon-violet: #7f4bda;
+  --neon-blue: #2646ef;
+  --neon-cyan: #04aff9;
+
+  --success: #25c970;
+  --danger: #ff6b81;
+  --danger-bg: rgba(233, 46, 72, 0.1);
+  --danger-stroke: rgba(255, 107, 129, 0.4);
+  --warning: #f19a59;
+  --focus: #a99fff;
+
+  /* --- gradients & glow (spec §1.2) --- */
+  /* barely-there indigo gradient: the lightest stop is #6458ff, so white text stays ≥ 4.5:1 */
+  --grad-primary: linear-gradient(90deg, #5a4ef6 0%, #6458ff 100%);
+  --grad-primary-hover: linear-gradient(90deg, #5246e8 0%, #5a4df0 100%);
+  --grad-pill-fill: linear-gradient(
+    90deg,
+    rgba(64, 30, 170, 0.55) 0%,
+    rgba(14, 13, 36, 0.85) 30%,
+    rgba(14, 13, 36, 0.85) 62%,
+    rgba(120, 48, 170, 0.7) 100%
+  );
+  --grad-pill-stroke: linear-gradient(90deg, #6c4bd8 0%, #3a2c8c 40%, #8a5be0 75%, #c06bf0 100%);
+  --grad-ring: linear-gradient(90deg, #f19a59, #e06aca 50%, #7f4bda);
+  --grad-card-full-stroke: linear-gradient(135deg, rgba(160, 140, 220, 0.45), rgba(80, 82, 120, 0.2) 40%, rgba(80, 82, 120, 0.12));
+  --grad-card-child-stroke: linear-gradient(135deg, rgba(82, 135, 132, 0.7), rgba(60, 90, 110, 0.25) 40%, rgba(80, 82, 120, 0.12));
+  --grad-glass: linear-gradient(160deg, rgba(62, 62, 92, 0.62), rgba(36, 38, 58, 0.62));
+
+  --glow-primary: 0 10px 30px -8px rgba(100, 88, 255, 0.6), inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  --glow-primary-hover: 0 14px 40px -8px rgba(110, 107, 255, 0.75), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  --glow-pill: 0 0 24px rgba(150, 90, 230, 0.45), 0 0 2px rgba(192, 107, 240, 0.6);
+  --glow-success-ring: 0 0 24px rgba(98, 87, 246, 0.7), 0 0 64px rgba(98, 87, 246, 0.35);
+  --glow-text-hero: 0 0 24px rgba(180, 160, 255, 0.25);
+  --highlight-top: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  /* --- glass (spec §1.3) --- */
+  /* DES-04: the panel reads as the same dark stage as the phone flow, not lavender glass */
+  --panel-bg: rgba(3, 4, 12, 0.9);
+  --panel-stroke: rgba(140, 140, 220, 0.18);
+  --bar-bg: rgba(3, 6, 17, 0.86);
+
+  /* --- radii (spec §1.4) --- */
+  --r-xs: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 20px;
+  --r-2xl: 28px;
+  --r-pill: 999px;
+
+  /* --- spacing: 4px base (spec §1.5) --- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-14: 56px;
+  --sp-20: 80px;
+  --sp-30: 120px;
+  --gutter: 20px;
+  --card-pad: 20px;
+  --header-h: 56px;
+  --panel-w: 440px;
+  --sheet-w: 560px;
+  --modal-w: 560px;
+
+  /* --- fonts (guidelines §1) --- */
+  --font-display: 'Unbounded Variable', 'Unbounded', 'Arial Black', 'Segoe UI', system-ui, sans-serif;
+  --font-ui: 'Onest Variable', 'Onest', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-script: 'Bad Script', 'Segoe Script', cursive;
+
+  /* --- type scale (guidelines §2) --- */
+  --fs-hero: clamp(3rem, 1.4rem + 8vw, 8.5rem);
+  --fs-logo: clamp(1.375rem, 1.1rem + 1.2vw, 2rem);
+  --fs-h1: clamp(1.625rem, 1.3rem + 1.6vw, 2.75rem);
+  --fs-h1-panel: 1.75rem; /* inside the 440–560px panel the viewport-based clamp would overshoot */
+  --fs-h2: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+  --fs-price: clamp(1.375rem, 1.2rem + 0.8vw, 1.875rem);
+  --fs-body: 1rem;
+  --fs-btn: 1rem;
+  --fs-small: 0.875rem;
+  --fs-xs: 0.8125rem;
+  --fs-overline: 0.75rem;
+  --fs-script: clamp(1.75rem, 1.3rem + 2vw, 3rem);
+
+  /* --- motion (spec §1.6 + innovator §1.1) --- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.83, 0, 0.17, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-micro: 120ms;
+  --dur-control: 200ms;
+  --dur-step: 420ms;
+  --dur-long: 700ms;
+
+  /* --- layers --- */
+  --z-photo: 0;
+  --z-canvas: 1;
+  --z-content: 2;
+  --z-backdrop: 20;
+  --z-flow: 30;
+  --z-modal: 40;
+  --z-toast: 50;
+}
+
+@media (max-width: 360px) {
+  :root {
+    --gutter: 16px;
+    --card-pad: 16px;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --panel-w: 480px;
+  }
+}

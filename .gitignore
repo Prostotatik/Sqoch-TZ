@@ -1,0 +1,34 @@
+node_modules/
+dist/
+dist-ssr/
+*.local
+.vite/
+coverage/
+
+# agent scratch
+agents-developer/tmp/
+agents-developer/shots/
+**/screenshots/
+**/shots/
+*.screenshot.png
+
+# editors / os
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+
+# trailer intermediates
+promo/capture/frames/
+promo/render/
+
+# agent workspaces / internal notes / promo
+agents-*/
+.claude/
+promo/
+info.md
+*.png
+!public/**/*.png
+.vercel
