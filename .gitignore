@@ -32,3 +32,4 @@ info.md
 *.png
 !public/**/*.png
 .vercel
+.env*
